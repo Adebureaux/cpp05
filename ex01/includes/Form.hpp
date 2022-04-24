@@ -3,22 +3,27 @@
 
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {
 	public:
 	/* Constructors, operator overload, destructor */
 	Form();
+	Form(const std::string name);
+	Form(const std::string name, int required_approve, int required_execute);
 	Form(const Form &other);
 	Form &operator=(const Form &other);
 	~Form();
 
 	/* Member functions */
-	void setRequiredApproveGrade(const int n) const;
-	void setRequiredExecuteGrade(const int n) const;
-	const int getRequiredApproveGrade(const int n) const;
-	const int getRequiredExecuteGrade(const int n) const;
 	std::string getName(void) const;
+	std::string getFormStatus(void) const;
+	int getRequiredApproveGrade(void) const;
+	int getRequiredExecuteGrade(void) const;
+	int setGrade(int grade) const;
+	void beSigned(const Bureaucrat &b);
 
 	/* Exeptions class */
 	class GradeTooHighException : public std::exception

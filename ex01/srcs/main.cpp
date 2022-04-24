@@ -1,86 +1,49 @@
+#include "../includes/Form.hpp"
 #include "../includes/Bureaucrat.hpp"
 
 int main(int ac, char **av)
 {
-	// Too high grades
+	Form default_form;
+	Form form("Triple copy form", 15, 30);
 	try
 	{
-		Bureaucrat("Titin", -1);
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << "Cannot construct the bureaucrat Tintin : " << e.what() << std::endl;
-	}
-
-	try
-	{
-		Bureaucrat("Milou", 0);
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << "Cannot construct the bureaucrat Milou : " << e.what() << std::endl;
-	}
-
-	// Normal grades
-	Bureaucrat A("A", 1);
-	Bureaucrat("B", 42);
-	Bureaucrat("C", 150);
-	std::cout << A << std::endl;
-
-	// Too low grades
-	try
-	{
-		Bureaucrat("Dupon", 400);
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << "Cannot construct the bureaucrat Dupon : " << e.what() << std::endl;
-	}
-
-	// setGrade
-	Bureaucrat test(1);
-	try
-	{
-		test.setGrade(151);
+		Form cpy_construcor(form);
+		Form cpy_operator = form;
+		std::cout << default_form << std::endl;
+		std::cout << form << std::endl;
+		std::cout << cpy_construcor << std::endl;
+		std::cout << cpy_operator << std::endl;
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << test << " : " << e.what() << std::endl;
+		std::cout << "An error occured : " << e.what() << std::endl;
 	}
 
-	// Increment grade
-	test.setGrade(1);
+	Bureaucrat philippe("Philippe", 100);
+	std::cout << form << std::endl;
+	std::cout << form << std::endl;
+	philippe.signForm(form);
+	std::cout << form << std::endl;
+
+	Form doc("confidential document", 100, 42);
+	Form cpy_doc = doc;
+	philippe.decGrade();
+	std::cout << philippe << std::endl;
+	std::cout << doc << std::endl;
+	philippe.signForm(doc);
+	std::cout << doc << std::endl;;
+	philippe.incGrade();
+	philippe.signForm(doc);
+
 	try
 	{
-		test.incGrade();
+		std::cout << cpy_doc << std::endl;
+		philippe.decGrade();
+		cpy_doc.beSigned(philippe);
 	}
 	catch (const std::exception& e)
 	{
-		std::cout << test << " : " << e.what() << std::endl;
+		std::cout << "An error occured : " << e.what() << std::endl;
 	}
-
-	test.setGrade(150);
-	try
-	{
-		test.decGrade();
-	}
-	catch (const std::exception& e)
-	{
-		std::cout << test << " : " << e.what() << std::endl;
-	}
-
-	try
-	{
-		std::cout << A << std::endl;
-		for (int i = 0; i < 10; i++)
-			A.decGrade();
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << test << " : " << e.what() << std::endl;
-	}
-	std::cout << A << std::endl;
-	
-	
 	return (0);	
 }
