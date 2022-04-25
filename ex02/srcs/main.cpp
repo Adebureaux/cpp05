@@ -4,10 +4,10 @@
 
 int main(int ac, char **av)
 {
-	Bureaucrat b("Kratos", 137);
-	ShrubberyCreationForm f("trees");
+	Bureaucrat b("Kratos", 1);
+	ShrubberyCreationForm f("tree");
 
 	b.signForm(f);
-	f.execute(b);
+	b.executeForm(f);
 	return (0);	
 }
