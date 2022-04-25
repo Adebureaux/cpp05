@@ -44,6 +44,9 @@ class Form
 		virtual const char* what() const throw();
 	};
 
+	protected:
+	std::string target;
+
 	private:
 	const std::string	name;
 	bool				approved;

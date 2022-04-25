@@ -12,6 +12,7 @@ Form::Form(const Form &other) : name(other.name), approved(other.approved), requ
 Form &Form::operator=(const Form &other)
 {
 	this->approved = other.approved;
+	this->target = other.target;
 	return (*this);
 }
 

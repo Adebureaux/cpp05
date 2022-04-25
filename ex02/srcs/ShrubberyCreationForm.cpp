@@ -1,8 +1,13 @@
 #include "../includes/ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubbery creation", 145, 137), target("undefined") {}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbery creation", 145, 137),  target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("Shrubbery creation", 145, 137)
+{
+	this->target = "undefined";
+}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbery creation", 145, 137)
+{
+	this->target = target;
+}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 {
@@ -11,7 +16,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
 {
-	this->target = other.target;
 	Form::operator=(other);
 	return (*this);
 }
