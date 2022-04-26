@@ -3,7 +3,10 @@
 
 #include <iostream>
 #include <string>
-class Form;
+#include "../includes/Form.hpp"
+#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
 
 class Intern
 {
@@ -13,7 +16,10 @@ class Intern
 	Intern &operator=(const Intern &other);
 	~Intern();
 
-	//Form* makeForm(std::string name, std::string target);
+	static Form* shrubberyCreation(const std::string target);
+	static Form* presidentialPardon(const std::string target);
+	static Form* robotomyRequest(const std::string target);
+	Form* makeForm(const std::string name, const std::string target);
 
 	private:
 	Form* form;
