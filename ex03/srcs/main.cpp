@@ -1,7 +1,7 @@
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/Intern.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	{
 		Intern  a;

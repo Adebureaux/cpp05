@@ -4,7 +4,7 @@
 #include "../includes/RobotomyRequestForm.hpp"
 #include "../includes/PresidentialPardonForm.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	{
 		Bureaucrat b("Kratos", 137);

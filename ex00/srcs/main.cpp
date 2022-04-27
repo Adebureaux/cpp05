@@ -1,6 +1,6 @@
 #include "../includes/Bureaucrat.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	// Too high grades
 	try

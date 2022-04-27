@@ -62,7 +62,8 @@ void Form::beSigned(const Bureaucrat &b)
 		this->approved = true;
 	}
 }
-const bool Form::canExecute(const Bureaucrat &b) const
+
+bool Form::canExecute(const Bureaucrat &b) const
 {
 	if (!this->approved)
 		throw Form::NotSignedException();

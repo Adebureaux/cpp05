@@ -20,9 +20,6 @@ class Intern
 	static Form* presidentialPardon(const std::string target);
 	static Form* robotomyRequest(const std::string target);
 	Form* makeForm(const std::string name, const std::string target);
-
-	private:
-	Form* form;
 };
 
 #endif

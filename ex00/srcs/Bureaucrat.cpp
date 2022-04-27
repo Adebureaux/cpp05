@@ -12,7 +12,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 	this->setGrade(grade);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(name)
+Bureaucrat::Bureaucrat(const Bureaucrat &other)
 {
 	*this = other;
 }

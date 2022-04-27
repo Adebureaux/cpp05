@@ -1,7 +1,7 @@
 #include "../includes/Form.hpp"
 #include "../includes/Bureaucrat.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	Form default_form;
 	Form form("Triple copy form", 15, 30);

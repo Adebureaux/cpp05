@@ -24,7 +24,7 @@ class Form
 	int getRequiredExecuteGrade(void) const;
 	int setGrade(int grade);
 	void beSigned(const Bureaucrat &b);
-	const bool canExecute(const Bureaucrat &b) const;
+	bool canExecute(const Bureaucrat &b) const;
 	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	/* Exeptions class */
